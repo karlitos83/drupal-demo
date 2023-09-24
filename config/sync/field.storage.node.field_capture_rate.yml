@@ -1,0 +1,20 @@
+uuid: e7f0713c-067c-45f6-89a0-45f1572352c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_capture_rate
+field_name: field_capture_rate
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 72cfda88-270f-475a-a34c-82864ac79a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_capture_rate
+    - node.type.pokemon
+id: node.pokemon.field_capture_rate
+field_name: field_capture_rate
+entity_type: node
+bundle: pokemon
+label: 'Capture rate'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
