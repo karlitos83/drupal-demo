@@ -36,7 +36,7 @@ class PokeAPIRequest extends DrushCommands
     {
         $url_pokemon = "https://pokeapi.co/api/v2/pokemon/";
         $url_species = "https://pokeapi.co/api/v2/pokemon-species/";
-        for ($id = 1; $id <= 10; $id++) {
+        for ($id = 1; $id <= 151; $id++) {
             $pokemon = \Drupal::service('sample_content.pokeapi_service')
                 ->getPokemon($url_pokemon, $id);
             $specie = \Drupal::service('sample_content.pokeapi_service')
