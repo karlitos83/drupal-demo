@@ -1,11 +1,12 @@
-uuid: 1a66aac1-6621-41df-b681-f8e9a9575935
+uuid: 649d44e3-3a1c-4c7e-b97e-502194cf0986
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_pokemon_front_image
-    - media.type.remote_image
     - node.type.pokemon
+  module:
+    - media_entity_remote_image
 id: node.pokemon.field_pokemon_front_image
 field_name: field_pokemon_front_image
 entity_type: node
@@ -17,13 +18,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      remote_image: remote_image
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+  link_type: '17'
+  alt_field_required: 1
+  title: 1
+field_type: remote_image_url

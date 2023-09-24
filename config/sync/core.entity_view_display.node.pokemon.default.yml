@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.pokemon.body
+    - field.field.node.pokemon.field_base_happiness
     - field.field.node.pokemon.field_capture_rate
     - field.field.node.pokemon.field_pokedex_id
     - field.field.node.pokemon.field_pokemon_color
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.pokemon.field_pokemon_type
     - node.type.pokemon
   module:
+    - media_entity_remote_image
     - text
     - user
 id: node.pokemon.default
@@ -23,7 +25,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  field_base_happiness:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_capture_rate:
     type: number_integer
@@ -32,7 +43,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_pokedex_id:
     type: number_integer
@@ -49,14 +60,17 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 4
     region: content
   field_pokemon_front_image:
-    type: entity_reference_entity_view
-    label: above
+    type: remote_image_url_formatter
+    label: hidden
     settings:
-      view_mode: default
-      link: false
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 1
     region: content

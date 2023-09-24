@@ -1,17 +1,16 @@
-uuid: 5b162f60-89f1-46d5-83ce-e949f34454d9
+uuid: 8dc99574-83ae-45f8-8fff-7001228d230a
 langcode: en
 status: true
 dependencies:
   module:
-    - media
+    - media_entity_remote_image
     - node
 id: node.field_pokemon_front_image
 field_name: field_pokemon_front_image
 entity_type: node
-type: entity_reference
-settings:
-  target_type: media
-module: core
+type: remote_image_url
+settings: {  }
+module: media_entity_remote_image
 locked: false
 cardinality: 1
 translatable: true

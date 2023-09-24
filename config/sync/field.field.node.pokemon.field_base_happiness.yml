@@ -1,0 +1,23 @@
+uuid: 5ef677ef-2f9a-4bdd-8f4a-2103bbcbc512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_base_happiness
+    - node.type.pokemon
+id: node.pokemon.field_base_happiness
+field_name: field_base_happiness
+entity_type: node
+bundle: pokemon
+label: 'Base happiness'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

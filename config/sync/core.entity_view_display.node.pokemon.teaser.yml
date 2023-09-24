@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.pokemon.body
+    - field.field.node.pokemon.field_base_happiness
     - field.field.node.pokemon.field_capture_rate
     - field.field.node.pokemon.field_pokedex_id
     - field.field.node.pokemon.field_pokemon_color
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.pokemon.field_pokemon_type
     - node.type.pokemon
   module:
+    - media_entity_remote_image
     - text
     - user
 id: node.pokemon.teaser
@@ -25,16 +27,28 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_pokemon_front_image:
+    type: remote_image_url_formatter
+    label: hidden
+    settings:
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_base_happiness: true
   field_capture_rate: true
   field_pokedex_id: true
   field_pokemon_color: true
-  field_pokemon_front_image: true
   field_pokemon_type: true
