@@ -4,11 +4,14 @@ module:
   admin_toolbar: 0
   block: 0
   breakpoint: 0
+  ckeditor5: 0
   config: 0
   dblog: 0
   dynamic_page_cache: 0
+  editor: 0
   entity_reference_revisions: 0
   field: 0
+  field_ui: 0
   file: 0
   filter: 0
   image: 0
@@ -21,6 +24,7 @@ module:
   migrate_tools: 0
   mysql: 0
   node: 0
+  options: 0
   page_cache: 0
   path_alias: 0
   sample_migrate: 0
