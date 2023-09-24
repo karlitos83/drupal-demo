@@ -25,6 +25,7 @@
         "drupal/migrate_source_csv": "^3.5",
         "drupal/migrate_tools": "^6.0",
         "drupal/paragraphs": "^1.16",
+        "drupal/yaml_content": "^1.0@alpha",
         "drush/drush": "^11.6"
     },
     "conflict": {
