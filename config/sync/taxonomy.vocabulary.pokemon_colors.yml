@@ -1,0 +1,8 @@
+uuid: 24ccf763-d082-4cda-9216-d4ef6e2d1425
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pokemon colors'
+vid: pokemon_colors
+description: ''
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 81b3706e-3791-46af-88b6-b22ecb87fa41
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pokemon types'
+vid: pokemon_types
+description: ''
+weight: 0
