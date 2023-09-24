@@ -1,0 +1,7 @@
+name: 'sample default content'
+type: module
+description: 'drupal-sample default content'
+core_version_requirement: 9.x
+package: 'Custom'
+dependencies:
+  - yaml_content

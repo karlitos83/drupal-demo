@@ -16,7 +16,7 @@ source:
 process:
   vid:
     plugin: default_value
-    default_value: colors
+    default_value: pokemon_colors
   tid: id
   name: color
 

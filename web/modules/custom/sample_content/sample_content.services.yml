@@ -1,0 +1,7 @@
+services:
+  sample_content.pokeapi_service:
+    class: Drupal\sample_content\PokeAPIService
+  sample_content.ebrequest:
+    class: Drupal\sample_content\Command\PokeAPIRequest
+    tags:
+      - { name: drush.command }
