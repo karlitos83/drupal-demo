@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: terms_pokemon_types
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - pokemon_types
+migration_group: sample_terms
+label: 'Sample Pokemon types'
+source:
+  plugin: csv
+  path: 'modules/custom/sample_migrate/csv_source/sources/pokemon_types.csv'
+  ids: [type_id]
+process:
+  vid:
+    plugin: default_value
+    default_value: pokemon_types
+  tid: type_id
+  name: type
+
+destination:
+  plugin: 'entity:taxonomy_term'
+
+migration_dependencies:
+  required: {  }

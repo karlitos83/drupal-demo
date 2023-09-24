@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_tools
+id: sample_terms
+label: 'Drupal sample terms group'
+description: 'Drupal sample terms migration group'
+source_type: 'csv'
+module: sample_migrate
+shared_configuration: null

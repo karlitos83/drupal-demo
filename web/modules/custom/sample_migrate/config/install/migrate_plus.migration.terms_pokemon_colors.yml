@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies: {  }
+id: terms_pokemon_colors
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - pokemon_colors
+migration_group: sample_terms
+label: 'Sample Pokemon colors'
+source:
+  plugin: csv
+  path: 'modules/custom/sample_migrate/csv_source/sources/pokemon_colors.csv'
+  ids: [id]
+process:
+  vid:
+    plugin: default_value
+    default_value: colors
+  tid: id
+  name: color
+
+destination:
+  plugin: 'entity:taxonomy_term'
+
+migration_dependencies:
+  required: {  }

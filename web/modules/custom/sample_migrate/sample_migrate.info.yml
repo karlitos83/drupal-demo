@@ -1,0 +1,9 @@
+name: 'sample migrate'
+type: module
+description: 'drupal-sample migrate'
+core_version_requirement: 9.x
+package: 'Custom'
+dependencies:
+  - migrate_tools
+  - migrate_source_csv
+  - migrate_plus
