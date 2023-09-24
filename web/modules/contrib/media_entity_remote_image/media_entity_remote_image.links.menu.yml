@@ -1,6 +1,0 @@
-media_entity_remote_image.settings:
-  title: Media entity remote image settings
-  description: Administer Media Entity Remote Image.
-  parent: system.admin_config_media
-  route_name: media_entity_remote_image.settings
-  weight: 10

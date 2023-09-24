@@ -1,1 +1,0 @@
-"Media Entity Remote Image" 

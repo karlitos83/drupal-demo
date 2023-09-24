@@ -1,7 +1,0 @@
-media_entity_remote_image.settings:
-  path: '/admin/config/media/media-entity-remote-image-settings'
-  defaults:
-    _title: 'Media entity remote image settings'
-    _form: 'Drupal\media_entity_remote_image\Form\SettingsForm'
-  requirements:
-    _permission: 'administer site configuration'
