@@ -1,0 +1,52 @@
+langcode: en
+dependencies: {  }
+id: mi_files
+label: 'Migrate files and media from markup'
+audit: true
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: mi_file_migration
+source:
+  plugin: d7_file
+  scheme: public
+  constants:
+    source_base_path: 'https://www.mioptions.com/'
+process:
+  fid: fid
+  filename: filename
+  file_uri:
+    plugin: str_replace
+    source: uri
+    search: 'public:/'
+    replace: 'sites/default/files'
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/source_base_path
+        - '@file_uri'
+    -
+      plugin: urlencode
+  uri:
+    -
+      plugin: skip_on_file_not_exists
+      method: row
+      source: '@source_full_path'
+      message: 'File does not exist'
+    -
+      plugin: file_copy
+      source:
+        - '@source_full_path'
+        - uri
+  filemime: filemime
+  status: status
+  created: created
+  changed: timestamp
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: alias
+destination:
+  plugin: 'entity:file'

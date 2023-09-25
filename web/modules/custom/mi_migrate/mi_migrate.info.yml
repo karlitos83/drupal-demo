@@ -1,0 +1,6 @@
+name: 'mi_migrate'
+type: module
+description: 'Custom module to migrate MI data'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'custom'
