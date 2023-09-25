@@ -1,0 +1,4 @@
+services:
+  migrate_media_handler.mediamaker:
+    class: Drupal\ni_migrate\MediaMaker
+    arguments: ['@entity_type.manager', '@config.factory']

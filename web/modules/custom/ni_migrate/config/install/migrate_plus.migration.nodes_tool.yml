@@ -1,0 +1,117 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nodes_tool
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - nodes
+migration_group: ni_nodes_migration
+label: 'NI Tool - Nodes migration'
+source:
+  plugin: ni_node_path_non_moderation_states
+  node_type: tool
+process:
+  nid: nid
+  uid_lookup:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: node_uid
+    -
+      plugin: migration_lookup
+      source: node_uid
+      migration: users
+  uid:
+    plugin: default_value
+    source: '@uid_lookup'
+    default_value: 266
+  title: title
+  moderation_state: moderation_state
+  created: created
+  changed: changed
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value:
+        plugin: str_replace
+        source: value
+        search: ['href="https://www.niibrary.nih.gov/', '%20', '%5B', '%5D', '%26', '%28', '%29'] # search and replace symbols with url encoding in filenames
+        replace: ['href="/', ' ', '[', ']', '&','(', ')']
+      format: format
+      summary: summary
+  field_tool_access_info:
+    plugin: sub_process
+    source: field_tool_access_info
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: filtered_html
+
+  field_tool_url:
+    plugin: sub_process
+    source: field_tool_url
+    process:
+      uri: value
+      title: title
+  # entity reference fields
+  field_workspace:
+    plugin: sub_process
+    source: field_workspace
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: terms_workspaces
+        source: tid
+  # If value is empty assign acces to top level customer group.
+  field_agency_access:
+    plugin: default_value
+    source: field_agency_access
+    default_value:
+      - 231
+      - 232
+      - 233
+      - 296
+  field_nih_library_service: field_nih_library_service
+  field_nih_subject: field_nih_subject
+  field_tagged:
+    -
+      plugin: sub_process
+      source: field_tagged
+      process:
+        target_id:
+          - plugin: migration_lookup
+            migration: terms_tags
+            source: tid
+
+# explore body html fields looking for files attached in tags - update file to media
+  pseudo_body:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@body/0/value'
+    -
+      plugin: dom
+      method: import
+      source: '@body/0/value'
+      log_messages: false
+    -
+      plugin: dom_inline_doc_handler
+    -
+      plugin: dom_inline_image_handler
+    -
+      plugin: dom
+      method: export
+
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: alias
+destination:
+  plugin: 'entity:node'
+  default_bundle: tool
+migration_dependencies:
+  required: {  }

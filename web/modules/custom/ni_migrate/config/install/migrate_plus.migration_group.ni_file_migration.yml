@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_drupal
+      - migrate_tools
+id: ni_file_migration
+label: 'NI file migration'
+description: 'Files migration group'
+source_type: 'Drupal 7'
+module: ni_migrate
+shared_configuration: null

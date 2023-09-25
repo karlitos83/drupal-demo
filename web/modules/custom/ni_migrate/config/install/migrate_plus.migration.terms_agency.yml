@@ -1,0 +1,48 @@
+id: terms_agency
+label: 'NI Agency taxonomy migration'
+migration_group: ni_taxonomy_migration
+
+source:
+  plugin: ni_taxonomy
+  bundle: agency
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: agency
+  
+  name: name
+  weight: weight
+
+  description/value: description
+  description/format: format
+
+  field_abbreviation : field_abbreviation
+
+  field_agency_url:
+    plugin: sub_process
+    source: field_agency_url
+    process:
+      uri:
+        -
+          plugin: str_replace
+          source: url
+          search: ['www.nia.nih.gov']
+          replace: ['https://www.nia.nih.gov']
+      title: title
+
+  field_category: field_category
+
+  field_established: field_established
+
+  path/pathauto: 
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
+
+  changed: timestamp
+migration_dependencies: { }

@@ -1,0 +1,51 @@
+langcode: en
+status: true
+id: users
+label: 'NI User Migration'
+migration_group: ni_migration_general_group
+source:
+  plugin: ni_user_path
+destination:
+  plugin: entity:user
+process:
+  uid: uid
+  mail:
+    plugin: get
+    source: mail
+  pass: 
+    plugin: get
+    source: pass
+  status: status
+
+  name: name
+
+  roles:
+    plugin: static_map
+    source: roles
+    map:
+      1: anonymous
+      2: authenticated
+      3: administrator
+      4: content_author
+      11: super_user
+      16: instruction_editor
+      26: web_editor
+      31: erm_editor
+      36: instructor
+
+  path/pathauto:
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
+
+  access: access
+  created: created
+  changed: changed
+
+migration_dependencies:
+  required: { }
+
+dependencies:
+  enforced:
+    module:
+      - ni_migrate

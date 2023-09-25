@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_drupal
+      - migrate_tools
+id: ni_nodes_migration
+label: 'NI nodes migration'
+description: 'Nodes migration group'
+source_type: 'Drupal 7'
+module: ni_migrate
+shared_configuration: null

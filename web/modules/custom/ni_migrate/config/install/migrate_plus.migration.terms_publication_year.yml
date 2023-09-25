@@ -1,0 +1,31 @@
+id: terms_publication_year
+label: 'NI Publication Year taxonomy migration'
+migration_group: ni_taxonomy_migration
+source:
+  plugin: ni_taxonomy
+  bundle: publication_year
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: publication_year
+  
+  name: name
+  weight: weight
+
+  description/value: description
+  description/format:
+    plugin: default_value
+    default_value: full_html
+
+  path/pathauto: 
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
+
+  changed: timestamp
+migration_dependencies: { }

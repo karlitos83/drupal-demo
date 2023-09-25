@@ -1,0 +1,31 @@
+id: terms_tags
+label: 'NI Tags taxonomy migration'
+migration_group: ni_taxonomy_migration
+source:
+  plugin: ni_taxonomy
+  bundle: blog
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: blog
+  
+  name: name
+  weight: weight
+
+  description/value: description
+  description/format:
+    plugin: default_value
+    default_value: full_html
+
+  path/pathauto: 
+    plugin: default_value
+    default_value: 0 # Disable pathauto.
+  path/alias: alias
+
+  changed: timestamp
+migration_dependencies: { }
