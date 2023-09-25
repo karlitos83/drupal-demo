@@ -1,0 +1,11 @@
+<?php
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function sample_trainer_page_attachments_alter(array &$attachments) {
+  // Check if the current page is /user/5.
+  if (\Drupal::service('path.matcher')->isPathCurrent('/user/*')) {
+    // Disable caching for this page.
+    $attachments['#cache']['max-age'] = 0;
+  }
+}

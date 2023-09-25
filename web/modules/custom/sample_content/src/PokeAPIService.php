@@ -75,7 +75,7 @@ class PokeAPIService
                 'title' => $pokemon['name'],
                 'body' => [
                     'value' => $pokemon_text,
-                    'format' => 'full_html',
+                    'format' => 'plain_text',
                 ],
                 'field_capture_rate' => $specie['capture_rate'],
                 'field_pokemon_type' => $tids,

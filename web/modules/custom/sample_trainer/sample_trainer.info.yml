@@ -1,0 +1,8 @@
+name: 'Trainer info'
+type: module
+description: 'Trainer info module'
+core_version_requirement: 9.x
+package: 'Custom'
+dependencies:
+  - user_event_dispatcher
+  - hook_event_dispatcher

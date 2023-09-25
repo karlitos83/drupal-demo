@@ -1,0 +1,7 @@
+services:
+  sample_trainer.user_registration_subscriber:
+    class: Drupal\sample_trainer\EventSubscriber\UserRegistrationSubscriber
+    tags:
+      - { name: event_subscriber }
+  sample_trainer.balance_service:
+    class: Drupal\sample_trainer\BalanceService
