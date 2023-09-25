@@ -20,11 +20,13 @@
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-project-message": "^9.5",
         "drupal/core-recommended": "^9.5",
+        "drupal/hook_event_dispatcher": "^3.3",
         "drupal/media_entity_remote_image": "^1.0@alpha",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_source_csv": "^3.5",
         "drupal/migrate_tools": "^6.0",
         "drupal/paragraphs": "^1.16",
+        "drupal/pathauto": "^1.11",
         "drupal/yaml_content": "^1.0@alpha",
         "drush/drush": "^11.6"
     },

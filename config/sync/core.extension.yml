@@ -6,6 +6,7 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config: 0
+  core_event_dispatcher: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
@@ -14,6 +15,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  hook_event_dispatcher: 0
   image: 0
   link: 0
   media: 0
@@ -26,17 +28,20 @@ module:
   mysql: 0
   node: 0
   page_cache: 0
+  path: 0
   path_alias: 0
   sample_content: 0
   sample_migrate: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
   views_ui: 0
   yaml_content: 0
+  pathauto: 1
   views: 10
   paragraphs: 11
   minimal: 1000
