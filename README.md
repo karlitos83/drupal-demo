@@ -39,3 +39,14 @@ This project serves as a showcase of various tasks that can be accomplished with
 9. When editing, users can add Pokémon to their Pokedex as desired.
 
 Feel free to explore this Drupal project's capabilities and functionalities.
+
+## TODO List
+
+- [ ] Implement random Pokémon summoning through an API request to an endpoint created with 'webform_rest' and record the summoning in a webform.
+
+- [ ] Enable the ability to capture a Pokémon if the user has available Pokéballs, based on the Pokémon's capture rate.
+
+- [ ] Update the webform submission via an API request to the webform endpoint with the results of the Pokémon capture. The controller should also update the user's profile with the captured Pokémon.
+
+- [ ] Build a call to action that triggers JavaScript to display the randomly summoned Pokémon and a button to attempt capturing the Pokémon while it's present.
+
