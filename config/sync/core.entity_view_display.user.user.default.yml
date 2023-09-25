@@ -1,0 +1,28 @@
+uuid: c34e9cec-ae83-4161-81c0-eeaf7014dac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_pokeballs
+  module:
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_pokeballs:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

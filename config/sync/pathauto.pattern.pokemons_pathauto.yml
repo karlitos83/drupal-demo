@@ -1,0 +1,22 @@
+uuid: ea717a4b-f842-4bdc-9288-d574e25ba075
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pokemons_pathauto
+label: 'Pokemons pathauto'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:field_pokedex_id]-[node:title]'
+selection_criteria:
+  75e923f3-1720-477c-9e93-faca9764689e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 75e923f3-1720-477c-9e93-faca9764689e
+    context_mapping:
+      node: node
+    bundles:
+      pokemon: pokemon
+selection_logic: and
+weight: -5
+relationships: {  }
