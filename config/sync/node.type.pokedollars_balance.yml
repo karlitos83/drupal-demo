@@ -1,0 +1,11 @@
+uuid: cc9e113d-d74c-4542-bfa0-c9d483ba30c7
+langcode: en
+status: true
+dependencies: {  }
+name: 'pokedollars balance'
+type: pokedollars_balance
+description: 'Stores trainers pokedollars'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

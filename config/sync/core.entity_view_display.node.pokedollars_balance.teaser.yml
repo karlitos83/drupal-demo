@@ -1,0 +1,26 @@
+uuid: d0eb1fb4-59a9-443b-b799-417f7d257522
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pokedollars_balance.field_operation_concept
+    - field.field.node.pokedollars_balance.field_pokedollars
+    - field.field.node.pokedollars_balance.field_trainer
+    - node.type.pokedollars_balance
+  module:
+    - user
+id: node.pokedollars_balance.teaser
+targetEntityType: node
+bundle: pokedollars_balance
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_operation_concept: true
+  field_pokedollars: true
+  field_trainer: true

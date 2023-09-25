@@ -1,0 +1,23 @@
+uuid: 9128b308-2dbf-449e-842a-f3a3dfe4e730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pokedollars
+    - node.type.pokedollars_balance
+id: node.pokedollars_balance.field_pokedollars
+field_name: field_pokedollars
+entity_type: node
+bundle: pokedollars_balance
+label: Pokedollars
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

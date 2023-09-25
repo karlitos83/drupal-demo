@@ -1,0 +1,47 @@
+uuid: 5be7d4b0-b5d0-4fa1-8217-4b75a9337203
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pokedollars_balance.field_operation_concept
+    - field.field.node.pokedollars_balance.field_pokedollars
+    - field.field.node.pokedollars_balance.field_trainer
+    - node.type.pokedollars_balance
+  module:
+    - user
+id: node.pokedollars_balance.default
+targetEntityType: node
+bundle: pokedollars_balance
+mode: default
+content:
+  field_operation_concept:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_pokedollars:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_trainer:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

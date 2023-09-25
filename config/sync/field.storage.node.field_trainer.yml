@@ -1,0 +1,20 @@
+uuid: 423052da-1b53-4002-ab6e-03eab8e28d1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_trainer
+field_name: field_trainer
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
