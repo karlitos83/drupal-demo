@@ -1,0 +1,24 @@
+uuid: 5bbebdc4-ab5c-4e59-9539-d547a5f233b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pokeballs
+  module:
+    - user
+id: user.user.field_pokeballs
+field_name: field_pokeballs
+entity_type: user
+bundle: user
+label: Pokeballs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
