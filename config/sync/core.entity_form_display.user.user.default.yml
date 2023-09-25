@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_pokeballs
+    - field.field.user.user.field_pokedex
   module:
+    - path
     - user
 id: user.user.default
 targetEntityType: user
@@ -21,6 +23,16 @@ content:
     weight: 7
     region: content
     settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_pokedex:
+    type: entity_reference_autocomplete
+    weight: 31
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   language:

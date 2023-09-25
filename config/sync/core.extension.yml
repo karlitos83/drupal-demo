@@ -30,8 +30,11 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  rest: 0
   sample_content: 0
   sample_migrate: 0
+  sample_trainer: 0
+  serialization: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -39,7 +42,11 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  user_event_dispatcher: 0
   views_ui: 0
+  webform: 0
+  webform_rest: 0
+  webform_ui: 0
   yaml_content: 0
   pathauto: 1
   views: 10
