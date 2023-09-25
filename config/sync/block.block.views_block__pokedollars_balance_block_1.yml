@@ -1,27 +1,26 @@
-uuid: 75169531-a047-424b-80d5-18e1c64d644c
+uuid: 8af79320-0d97-40f4-94d2-ce14d58332f0
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.pokedex
+    - views.view.pokedollars_balance
   module:
     - system
     - user
     - views
   theme:
     - claro
-id: views_block__pokedex_block_1
+id: views_block__pokedollars_balance_block_1
 theme: claro
 region: content
-weight: -2
+weight: -1
 provider: null
-plugin: 'views_block:pokedex-block_1'
+plugin: 'views_block:pokedollars_balance-block_1'
 settings:
-  id: 'views_block:pokedex-block_1'
+  id: 'views_block:pokedollars_balance-block_1'
   label: ''
   label_display: visible
   provider: views
-  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:

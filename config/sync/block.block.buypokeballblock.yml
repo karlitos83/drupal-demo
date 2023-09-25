@@ -1,29 +1,24 @@
-uuid: 75169531-a047-424b-80d5-18e1c64d644c
+uuid: e96fa978-a346-4b46-8292-4059f3a2f574
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.pokedex
   module:
+    - sample_trainer
     - system
     - user
-    - views
   theme:
     - claro
-id: views_block__pokedex_block_1
+id: buypokeballblock
 theme: claro
 region: content
-weight: -2
+weight: 0
 provider: null
-plugin: 'views_block:pokedex-block_1'
+plugin: buy_pokeball_block
 settings:
-  id: 'views_block:pokedex-block_1'
-  label: ''
+  id: buy_pokeball_block
+  label: 'Buy Pokeball Block'
   label_display: visible
-  provider: views
-  context_mapping: {  }
-  views_label: ''
-  items_per_page: none
+  provider: sample_trainer
 visibility:
   request_path:
     id: request_path
