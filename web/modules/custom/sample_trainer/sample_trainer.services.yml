@@ -3,6 +3,12 @@ services:
     class: Drupal\sample_trainer\EventSubscriber\UserRegistrationSubscriber
     tags:
       - { name: event_subscriber }
+  sample_trainer.pokemon_subscriber:
+    class: Drupal\sample_trainer\EventSubscriber\PokemonSubscriber
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      - { name: 'event_subscriber' }
   sample_trainer.balance_service:
     class: Drupal\sample_trainer\BalanceService
     arguments: ['@database']
