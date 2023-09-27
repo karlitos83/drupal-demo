@@ -44,6 +44,7 @@ class PokeAPIRequest extends DrushCommands
             \Drupal::service('sample_content.pokeapi_service')
                 ->savePokemon($pokemon, $specie, $id);
         }
+        $this->output()->writeln("First generation pokemons registered.");
     }
 
 }
