@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\miax_migrate\Plugin\migrate\source;
+namespace Drupal\mi_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
@@ -8,7 +8,7 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
  * Get Node fields from the d8 database.
  *
  * @MigrateSource(
- *   id = "miax_users"
+ *   id = "mi_users"
  * )
  */
 class MiaxUsers extends SqlBase {

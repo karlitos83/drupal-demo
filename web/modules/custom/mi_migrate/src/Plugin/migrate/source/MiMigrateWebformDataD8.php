@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\miax_migrate\Plugin\migrate\source;
+namespace Drupal\mi_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
 
@@ -8,7 +8,7 @@ use Drupal\migrate\Row;
  * Get data fields from the d8 database.
  *
  * @MigrateSource(
- *   id = "miax_migrate_webform_data_d8"
+ *   id = "mi_migrate_webform_data_d8"
  * )
  */
 class MiaxMigrateWebformDataD8 extends MiaxMigrateWebformD8 {
@@ -59,9 +59,9 @@ class MiaxMigrateWebformDataD8 extends MiaxMigrateWebformD8 {
 
     $subscriptionOptions = $this->getSubscriptionOptions($email);
     foreach ($subscriptionOptions as $option) {
-      $miaxSubscription = $this->assignSubscriptionOptionsToSubmit($option);
-      if ($miaxSubscription) {
-        $submittedData[$miaxSubscription][] = $option;
+      $miSubscription = $this->assignSubscriptionOptionsToSubmit($option);
+      if ($miSubscription) {
+        $submittedData[$miSubscription][] = $option;
       }
     }
 
@@ -78,8 +78,8 @@ class MiaxMigrateWebformDataD8 extends MiaxMigrateWebformD8 {
    *   Array empty array when user data not found.
    */
   public function getSubscriptionUserData(string $email) {
-    /** @var \Drupal\miax_subscription\ConstantContact\Services\ContactService $contactService */
-    $contactService = \Drupal::service('miax_subscription.contact.service');
+    /** @var \Drupal\mi_subscription\ConstantContact\Services\ContactService $contactService */
+    $contactService = \Drupal::service('mi_subscription.contact.service');
     // Apply a delay of one second to avoid more than 4 request peer second.
     sleep(1);
     if ($contactService->contactEmailExists($email)) {
@@ -95,8 +95,8 @@ class MiaxMigrateWebformDataD8 extends MiaxMigrateWebformD8 {
    *   Array with the subscription options.
    */
   public function getSubscriptionOptions(string $email) {
-    /** @var \Drupal\miax_subscription\ConstantContact\Services\ContactService $contactService */
-    $contactService = \Drupal::service('miax_subscription.contact.service');
+    /** @var \Drupal\mi_subscription\ConstantContact\Services\ContactService $contactService */
+    $contactService = \Drupal::service('mi_subscription.contact.service');
     // Apply a delay of one second to avoid more than 4 request peer second.
     sleep(1);
     if ($contactService->contactEmailExists($email)) {
@@ -114,31 +114,31 @@ class MiaxMigrateWebformDataD8 extends MiaxMigrateWebformD8 {
   private function assignSubscriptionOptionsToSubmit(string $option) {
 
     $options = [
-      "1917833164" => 'miax_pearl_options', //MIAX PEARL Options Trading Alerts
-      "1815171307" => 'miax_pearl_options', //MIAX PEARL Options Technical Alerts
-      "1480556594" => 'miax_pearl_options', //MIAX PEARL Options Regulatory Alerts
-      "1996168573" => 'miax_pearl_options', //MIAX PEARL Options News Alerts
-      "2040542947" => 'miax_pearl_options', //MIAX PEARL Options Fee Change Alerts
-      "1250708629" => 'miax_pearl_options', //MIAX PEARL Options Listing Alerts
-      "1170203629" => 'miax_emerald', //MIAX Emerald Options Listing Alerts
-      "1540883187" => 'miax_emerald', //MIAX Emerald Options Fee Change Alerts
-      "1913305393" => 'miax_emerald', //MIAX Emerald Options Regulatory Alerts
-      "1805344008" => 'miax_emerald', //MIAX Emerald Options News Alerts
-      "1772663819" => 'miax_emerald', //MIAX Emerald Options Technical Alerts
-      "1045051221" => 'miax_emerald', //MIAX Emerald Options Trading Alerts
-      "1701936956" => 'miax_options', //MIAX Options Product Alerts
-      "2" => 'miax_options', //MIAX Options Trading Alerts
-      "3" => 'miax_options', //MIAX Options Regulatory Alerts
-      "4" => 'miax_options', //MIAX Options Technical Alerts
-      "5" => 'miax_options', //MIAX Options Listing Alerts
-      "2095483568" => 'miax_options', //MIAX Options News Alerts
-      "1683747673" => 'miax_options', //MIAX Options Fee Change Alerts
-      "1955080632" => 'miax_pearl_equities', //MIAX PEARL Equities Fee Change Alerts
-      "1119087600" => 'miax_pearl_equities', //MIAX PEARL Equities Listing Alerts
-      "1803901185" => 'miax_pearl_equities', //MIAX PEARL Equities News Alerts
-      "1950843516" => 'miax_pearl_equities', //MIAX PEARL Equities Regulatory Alerts
-      "1682757790" => 'miax_pearl_equities', //MIAX PEARL Equities Technical Alerts
-      "1532975774" => 'miax_pearl_equities', //MIAX PEARL Equities Trading Alerts
+      "1917833164" => 'mi_pearl_options', //MIAX PEARL Options Trading Alerts
+      "1815171307" => 'mi_pearl_options', //MIAX PEARL Options Technical Alerts
+      "1480556594" => 'mi_pearl_options', //MIAX PEARL Options Regulatory Alerts
+      "1996168573" => 'mi_pearl_options', //MIAX PEARL Options News Alerts
+      "2040542947" => 'mi_pearl_options', //MIAX PEARL Options Fee Change Alerts
+      "1250708629" => 'mi_pearl_options', //MIAX PEARL Options Listing Alerts
+      "1170203629" => 'mi_emerald', //MIAX Emerald Options Listing Alerts
+      "1540883187" => 'mi_emerald', //MIAX Emerald Options Fee Change Alerts
+      "1913305393" => 'mi_emerald', //MIAX Emerald Options Regulatory Alerts
+      "1805344008" => 'mi_emerald', //MIAX Emerald Options News Alerts
+      "1772663819" => 'mi_emerald', //MIAX Emerald Options Technical Alerts
+      "1045051221" => 'mi_emerald', //MIAX Emerald Options Trading Alerts
+      "1701936956" => 'mi_options', //MIAX Options Product Alerts
+      "2" => 'mi_options', //MIAX Options Trading Alerts
+      "3" => 'mi_options', //MIAX Options Regulatory Alerts
+      "4" => 'mi_options', //MIAX Options Technical Alerts
+      "5" => 'mi_options', //MIAX Options Listing Alerts
+      "2095483568" => 'mi_options', //MIAX Options News Alerts
+      "1683747673" => 'mi_options', //MIAX Options Fee Change Alerts
+      "1955080632" => 'mi_pearl_equities', //MIAX PEARL Equities Fee Change Alerts
+      "1119087600" => 'mi_pearl_equities', //MIAX PEARL Equities Listing Alerts
+      "1803901185" => 'mi_pearl_equities', //MIAX PEARL Equities News Alerts
+      "1950843516" => 'mi_pearl_equities', //MIAX PEARL Equities Regulatory Alerts
+      "1682757790" => 'mi_pearl_equities', //MIAX PEARL Equities Technical Alerts
+      "1532975774" => 'mi_pearl_equities', //MIAX PEARL Equities Trading Alerts
     ];
 
     if (array_key_exists($option, $options)) {

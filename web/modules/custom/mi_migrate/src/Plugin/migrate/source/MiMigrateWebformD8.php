@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\miax_migrate\Plugin\migrate\source;
+namespace Drupal\mi_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 
@@ -8,7 +8,7 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
  * Get data fields from the d8 database.
  *
  * @MigrateSource(
- *   id = "miax_migrate_webform_d8"
+ *   id = "mi_migrate_webform_d8"
  * )
  */
 class MiaxMigrateWebformD8 extends SqlBase {
@@ -20,9 +20,9 @@ class MiaxMigrateWebformD8 extends SqlBase {
    *   Query to select D8 subscription fields.
    */
   public function query() {
-    // $sql = '(@n := @n +1) sid, msut.token, msut.email, msut.date FROM (select @n:=0) initvars, miax_subscription_update_tokens msut';
+    // $sql = '(@n := @n +1) sid, msut.token, msut.email, msut.date FROM (select @n:=0) initvars, mi_subscription_update_tokens msut';
 
-    $query = $this->select('miax_subscription_update_tokens', 'msut');
+    $query = $this->select('mi_subscription_update_tokens', 'msut');
     $query->fields('msut', [
       'token',
       'email',

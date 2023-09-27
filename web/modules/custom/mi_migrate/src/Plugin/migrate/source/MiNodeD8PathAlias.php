@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\miax_migrate\Plugin\migrate\source;
+namespace Drupal\mi_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Row;
 
@@ -8,7 +8,7 @@ use Drupal\migrate\Row;
  * Node entities with path alias from D8 database.
  *
  * @MigrateSource(
- *   id = "miax_node_d8_path_alias"
+ *   id = "mi_node_d8_path_alias"
  * )
  */
 class MiaxNodeD8PathAlias extends MiaxNodeD8 {
