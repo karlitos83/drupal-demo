@@ -1,0 +1,10 @@
+- entity: "block_content"
+  # The machine name of the Custom Block type.
+  type: "basic"
+  # The admin title.
+  info: "Pokemon trainer"
+  status: 1
+  uuid: a7623545-ab96-4e8e-bf9e-3e11a582ec60
+  body:
+    - format: 'full_html'
+      value: '<div><img src="https://i.pinimg.com/originals/3c/06/59/3c06599306cca1e170ce8df10949cf91.gif" width="96" height="96"></div>'

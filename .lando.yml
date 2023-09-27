@@ -19,5 +19,8 @@ tooling:
       - appserver: composer install
       - appserver: drush si minimal --site-name=drupal-demo --account-mail=karlitoskillyou@hotmail.com --account-name=root --account-pass=toor --existing-config -y
       - appserver: drush cim -y
+      - appserver: drush yaml-content-import modules/custom/sample_content
+      - appserver: drush pmu sample_content
+      - appserver: drush en sample_content
       - appserver: drush migrate:import --group=sample_terms
       - appserver: drush pokeapi:request

@@ -1,9 +1,9 @@
-uuid: a7623545-ab96-4e8e-bf9e-3e11a582ec60
+uuid: be88cbf1-c340-4d9d-93ab-fc33b54079b9
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:d8644e35-4abe-4566-8e0f-54ab10c7af42'
+    - 'block_content:basic:a7623545-ab96-4e8e-bf9e-3e11a582ec60'
   module:
     - block_content
     - system
@@ -13,12 +13,12 @@ dependencies:
 id: pokemontrainer
 theme: claro
 region: highlighted
-weight: -4
+weight: 0
 provider: null
-plugin: 'block_content:d8644e35-4abe-4566-8e0f-54ab10c7af42'
+plugin: 'block_content:a7623545-ab96-4e8e-bf9e-3e11a582ec60'
 settings:
-  id: 'block_content:d8644e35-4abe-4566-8e0f-54ab10c7af42'
-  label: 'pokemon trainer'
+  id: 'block_content:a7623545-ab96-4e8e-bf9e-3e11a582ec60'
+  label: 'Pokemon trainer'
   label_display: visible
   provider: block_content
   status: true
