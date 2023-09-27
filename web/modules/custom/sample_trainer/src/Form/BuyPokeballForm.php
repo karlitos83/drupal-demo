@@ -53,7 +53,7 @@ class BuyPokeballForm extends FormBase
     if ($pokeball_number) {
       $uid = \Drupal::currentUser()->id();
       $trainer_amount = \Drupal::service('sample_trainer.balance_service')
-          ->getBalance($uid);
+          ->getAmount($uid);
       $pokeballs_amount = (int)$pokeball_number * 50;
       if ($trainer_amount < $pokeballs_amount) {
         $form_state->setErrorByName('pokeballs_number', 'Not enough pokedollars.');

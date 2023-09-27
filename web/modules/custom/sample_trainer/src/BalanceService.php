@@ -1,5 +1,7 @@
 <?php
 namespace Drupal\sample_trainer;
+use Drupal\Core\Database\Connection;
+use Drupal\user\Entity\User;
 
 /**
  * Class CustomService
@@ -8,17 +10,45 @@ namespace Drupal\sample_trainer;
  */
 class BalanceService
 {
+    /**
+     * Database connection.
+     *
+     * @var \Drupal\Core\Database\Connection
+     */
+    protected $connection;
 
     /**
-     * This function fetch the user balance.
+     * Constructs a new Connection object.
+     *
+     * @param \Drupal\Core\Database\Connection $connection
+     *   Add database connection.
+     */
+    public function __construct(Connection $connection){
+        $this->database = $connection;
+    }
+
+    /**
+     * This function fetch the user pokedollars amount.
      *
      * @param int $uid  The Pokemon ID.
      */
-    public function getBalance(int $uid)
+    public function getAmount(int $uid)
     {
-        // TODO get trainer pokedollars amount
-        $amount = 300;
-        return $amount;
+
+        $query = $this->database->select('node__field_trainer', 'nft');
+        $query
+        ->fields('nft', ['entity_id'])
+        ->condition('nft.field_trainer_target_id', $uid);
+        $query->range(0, 1);
+        $nid = $query->execute()->fetchField();
+
+        if (!empty($nid)) {
+            $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+            $pokedollars = $node->get('field_pokedollars')->value;
+            return $pokedollars;
+        }
+
+        return NULL;
 
     }
 

@@ -5,3 +5,8 @@ services:
       - { name: event_subscriber }
   sample_trainer.balance_service:
     class: Drupal\sample_trainer\BalanceService
+    arguments: ['@database']
+  sample_trainer.update_trainer:
+    class: Drupal\sample_trainer\Command\UpdateTrainer
+    tags:
+      - { name: drush.command }
