@@ -13,7 +13,7 @@ dependencies:
 id: views_block__pokedollars_balance_block_1
 theme: claro
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'views_block:pokedollars_balance-block_1'
 settings:

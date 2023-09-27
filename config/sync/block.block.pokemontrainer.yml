@@ -1,29 +1,29 @@
-uuid: 75169531-a047-424b-80d5-18e1c64d644c
+uuid: a7623545-ab96-4e8e-bf9e-3e11a582ec60
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.pokedex
+  content:
+    - 'block_content:basic:d8644e35-4abe-4566-8e0f-54ab10c7af42'
   module:
+    - block_content
     - system
     - user
-    - views
   theme:
     - claro
-id: views_block__pokedex_block_1
+id: pokemontrainer
 theme: claro
-region: content
-weight: -3
+region: highlighted
+weight: -4
 provider: null
-plugin: 'views_block:pokedex-block_1'
+plugin: 'block_content:d8644e35-4abe-4566-8e0f-54ab10c7af42'
 settings:
-  id: 'views_block:pokedex-block_1'
-  label: ''
+  id: 'block_content:d8644e35-4abe-4566-8e0f-54ab10c7af42'
+  label: 'pokemon trainer'
   label_display: visible
-  provider: views
-  context_mapping: {  }
-  views_label: ''
-  items_per_page: none
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
 visibility:
   request_path:
     id: request_path
