@@ -3,6 +3,7 @@ _core:
 module:
   admin_toolbar: 0
   block: 0
+  block_content: 0
   breakpoint: 0
   ckeditor5: 0
   config: 0
@@ -17,6 +18,8 @@ module:
   filter: 0
   hook_event_dispatcher: 0
   image: 0
+  jsonapi: 0
+  jsonapi_event_dispatcher: 0
   link: 0
   media: 0
   media_entity_remote_image: 0
@@ -31,6 +34,7 @@ module:
   path: 0
   path_alias: 0
   rest: 0
+  restui: 0
   sample_content: 0
   sample_migrate: 0
   sample_trainer: 0
