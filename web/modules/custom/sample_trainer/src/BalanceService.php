@@ -30,17 +30,11 @@ class BalanceService
     /**
      * This function fetch the user pokedollars amount.
      *
-     * @param int $uid  The Pokemon ID.
+     * @param int $uid  The trainer UID.
      */
     public function getAmount(int $uid)
     {
-
-        $query = $this->database->select('node__field_trainer', 'nft');
-        $query
-        ->fields('nft', ['entity_id'])
-        ->condition('nft.field_trainer_target_id', $uid);
-        $query->range(0, 1);
-        $nid = $query->execute()->fetchField();
+        $nid = $this->getBalanceNodeId($uid);
 
         if (!empty($nid)) {
             $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
@@ -52,5 +46,40 @@ class BalanceService
 
     }
 
+    /**
+     * This function fetch the user pokedollars amount.
+     *
+     * @param int $uid  The Pokemon ID.
+     * @param int $substract pokedollars to substract
+     */
+    public function substractAmount(int $uid, int $substract, int $pokeballs)
+    {
+        $current_amount = $this->getAmount($uid);
+        $nid = $this->getBalanceNodeId($uid);
+        $new_amount = $current_amount - $substract;
+        if (!empty($nid)) {
+            $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+            $node->set('field_pokedollars', $new_amount);
+            $node->set('field_operation_concept', "Pokeballs X$pokeballs -$substract pokedollars");
+            $node->setNewRevision(TRUE);
+            $node->save();
+        }
+    }
+
+    /**
+     * This function fetch balance nodes ids.
+     *
+     * @param int $uid  Trainer id.
+     */
+    private function getBalanceNodeId($uid) {
+        $query = $this->database->select('node__field_trainer', 'nft');
+        $query
+        ->fields('nft', ['entity_id'])
+        ->condition('nft.field_trainer_target_id', $uid);
+        $query->range(0, 1);
+        $nid = $query->execute()->fetchField();
+
+        return $nid;
+    }
 }
 

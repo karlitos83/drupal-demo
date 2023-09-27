@@ -49,7 +49,7 @@ class UpdateTrainer extends DrushCommands
             $current_amount = $node->get('field_pokedollars')->value;
             $new_amount = $current_amount + $amount;
             $node->set('field_pokedollars', $new_amount);
-            $node->set('field_operation_concept', "$amount pokedollars de regalo");
+            $node->set('field_operation_concept', "$amount pokedollars free");
             $node->setNewRevision(TRUE);
             $node->revision_log = 'Created revision for node' . $nid;
             $node->save();

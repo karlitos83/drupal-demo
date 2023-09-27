@@ -78,6 +78,8 @@ class BuyPokeballForm extends FormBase
     $pb = $trainer_pokeballs + $new_pokeballs;
     $trainer->set('field_pokeballs', $pb);
     $trainer->save();
+    \Drupal::service('sample_trainer.balance_service')
+      ->substractAmount($uid, $new_pokeballs * 50, $new_pokeballs);
     \Drupal::messenger()->addStatus("You have bought $new_pokeballs pokeballs.");
   }
 
