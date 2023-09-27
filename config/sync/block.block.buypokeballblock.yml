@@ -16,7 +16,7 @@ provider: null
 plugin: buy_pokeball_block
 settings:
   id: buy_pokeball_block
-  label: 'Buy Pokeball Block'
+  label: 'Buy Pokeballs'
   label_display: visible
   provider: sample_trainer
 visibility:
