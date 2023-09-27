@@ -1,0 +1,21 @@
+memory_app:
+  version: VERSION
+  js:
+    js/dist/main.min.js: {minified: true}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+  css:
+    theme:
+      css/dist/styles.css: {}
+
+memory_app_dev:
+  version: 1.x
+  js:
+    js/dist_dev/main.min.js: {minified: true}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+  css:
+    theme:
+      css/dist/styles.css: {}

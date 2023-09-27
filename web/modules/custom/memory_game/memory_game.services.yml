@@ -1,0 +1,11 @@
+services:
+  memory_game.on_create:
+    class: Drupal\memory_game\EventSubscriber\WebformSettings
+    arguments:
+      - '@entity_type.manager'
+    tags:
+      - { name: 'event_subscriber' }
+  memory_game.generate_positions:
+    class: Drupal\memory_game\GeneratePositions
+    arguments: []
+
