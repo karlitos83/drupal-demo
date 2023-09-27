@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - rest.resource.webform_rest_submit
   module:
     - filter
     - media
     - node
+    - rest
     - system
     - toolbar
 _core:
@@ -20,6 +22,7 @@ permissions:
   - 'access content'
   - 'access toolbar'
   - 'access user profiles'
+  - 'restful post webform_rest_submit'
   - 'use text format full_html'
   - 'view all revisions'
   - 'view media'
