@@ -10,7 +10,7 @@ use Drupal\sample_trainer\Form\BuyPokeballForm;
  *
  * @Block(
  *  id = "buy_pokeball_block",
- *  admin_label = @Translation("Buy Pokeball Block"),
+ *  admin_label = @Translation("Buy Pokeball"),
  * )
  */
 class BuyPokeballBlock extends BlockBase {
