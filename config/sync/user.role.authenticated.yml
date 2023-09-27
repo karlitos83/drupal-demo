@@ -2,7 +2,10 @@ uuid: e0e1edb3-710c-477c-a913-e5cc2e207bf1
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.full_html
   module:
+    - filter
     - media
     - node
     - system
@@ -17,6 +20,7 @@ permissions:
   - 'access content'
   - 'access toolbar'
   - 'access user profiles'
+  - 'use text format full_html'
   - 'view all revisions'
   - 'view media'
   - 'view own unpublished content'

@@ -12,7 +12,16 @@ id: pokemon_summons
 title: 'Pokemon Summons'
 description: ''
 category: ''
-elements: null
+elements: |-
+  user_id:
+    '#type': number
+    '#title': 'user id'
+  pokemon_id:
+    '#type': number
+    '#title': 'pokemon id'
+  captured:
+    '#type': checkbox
+    '#title': captured
 css: ''
 javascript: ''
 settings:
