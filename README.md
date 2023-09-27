@@ -7,6 +7,12 @@ This project serves as a showcase of various tasks that can be accomplished with
 
 ## Drush Command Exercise
 - Utilization of a Drush command provided by the custom module 'sample_content' to fetch data from the [PokeAPI](https://pokeapi.co/) and subsequently load first-generation Pokémon into a custom content type called "Pokemon."
+- A second one drush command gives 100 free pokedollars to each user, the amount can be added as parameter:
+
+```
+$ lando drush stpok 150
+150 pokedollars given to all trainers.
+```
 
 ## Event Subscriber Exercise
 - Creation of a user triggers an event that adds a default value to the 'field_pokeballs' field.
@@ -17,6 +23,23 @@ This project serves as a showcase of various tasks that can be accomplished with
   - Revision view for the 'balance' content type, which is related to the user through an entity reference field.
   - Pokedex view: User profiles have an entity reference field to the 'pokemon' content type, listing discovered/added Pokémon.
   - Both views use contextual filters to display content specific to the user.
+ 
+## Blocks
+- Blocks created programmatically to store the Buy pokeballs form.
+- Custom type block created, block created and filled as content default using `yaml_content` module
+
+## Webform rest
+- I activated the 'webform_rest' module and enabled the POST request functionality. This means it can now be fed data via an API request with a payload like the following POST request:
+
+```
+{
+  "webform_id": "pokemon_summons",
+  "user_id": 2,
+  "pokemon_id": 25,
+  "captured": false
+}
+```
+This insert operation triggers an action to update the user's Pokédex based on the 'pokemon_id' and 'user_id' received."
 
 ## Custom Modules
 - Three custom modules were built:
@@ -27,7 +50,7 @@ This project serves as a showcase of various tasks that can be accomplished with
 ## System Requirements
 - Docker and Lando must be installed to run this project.
 
-## Installation Instructions
+## Instructions
 1. Clone the project repository.
 2. Navigate to the 'drupal-demo' directory.
 3. Initialize Lando using `lando start`.
@@ -37,7 +60,25 @@ This project serves as a showcase of various tasks that can be accomplished with
 7. As an anonymous user, you can create an account and log in.
 8. All content will be displayed on the user page.
 9. When editing, users can add Pokémon to their Pokedex as desired.
+10. The first login generates the pokedollars balance node for your user.
+11. 300 pokedollars are added for free too.
+12. Pokeballs price is 50 pokedollars each.
+13. 3 pokeballs are added to your account when you create it.
+14. You are able to give pokedollars to all user running:
+```
+$ lando drush stpok 150
+150 pokedollars given to all trainers.
+```
+and discover pokemons via API POST request to `http://drupal-demo.lndo.site/webform_rest/submit`
 
+```
+{
+  "webform_id": "pokemon_summons",
+  "user_id": 2,
+  "pokemon_id": 25,
+  "captured": false
+}
+```
 Feel free to explore this Drupal project's capabilities and functionalities.
 
 ## TODO List
