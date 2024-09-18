@@ -1,7 +1,0 @@
-name: 'Memory Game'
-type: module
-description: 'Memory Game'
-core_version_requirement: 9.x
-package: 'Custom'
-dependencies:
-  - hook_event_dispatcher
